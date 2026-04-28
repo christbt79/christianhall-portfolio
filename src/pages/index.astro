@@ -1,0 +1,23 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/Hero.astro';
+import About from '~/components/About.astro';
+import Clients from '~/components/Clients.astro';
+import Results from '~/components/Results.astro';
+import ExperienceList from '~/components/ExperienceList.astro';
+import SkillGrid from '~/components/SkillGrid.astro';
+import BlogList from '~/components/BlogList.astro';
+import ContactCard from '~/components/ContactCard.astro';
+import { profile } from '~/data/profile';
+---
+
+<BaseLayout title={`${profile.name} — ${profile.tagline}`} description={profile.summary}>
+  <Hero />
+  <About />
+  <Clients />
+  <Results />
+  <ExperienceList />
+  <SkillGrid />
+  <BlogList limit={2} />
+  <ContactCard />
+</BaseLayout>

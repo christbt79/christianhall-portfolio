@@ -1,0 +1,65 @@
+---
+import Section from './Section.astro';
+import GlassCard from './GlassCard.astro';
+import { contact } from '~/data/profile';
+import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from 'lucide-react';
+
+const rows = [
+  { icon: Mail, label: 'Email', value: contact.email, href: `mailto:${contact.email}` },
+  { icon: Linkedin, label: 'LinkedIn', value: contact.linkedin.replace(/^https?:\/\//, ''), href: contact.linkedin },
+  { icon: Github, label: 'GitHub', value: contact.github.replace(/^https?:\/\//, ''), href: contact.github },
+  { icon: MapPin, label: 'Location', value: contact.location, href: null },
+];
+---
+
+<Section
+  id="contact"
+  eyebrow="Contact"
+  title="Let's talk"
+  description="The fastest way to reach me is by email or connecting on LinkedIn."
+>
+  <GlassCard>
+    <ul class="divide-y divide-black/5 dark:divide-white/5">
+      {rows.map((row) => {
+        const Icon = row.icon;
+        const content = (
+          <div class="flex items-center justify-between py-4">
+            <div class="flex items-center gap-4">
+              <span class="glass flex h-10 w-10 items-center justify-center rounded-full">
+                <Icon size={18} />
+              </span>
+              <div>
+                <p class="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                  {row.label}
+                </p>
+                <p class="mt-0.5 text-base">{row.value}</p>
+              </div>
+            </div>
+            {row.href && (
+              <ArrowUpRight
+                size={18}
+                className="text-[color:var(--muted)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+              />
+            )}
+          </div>
+        );
+        return (
+          <li class="first:-mt-2 last:-mb-2">
+            {row.href ? (
+              <a
+                href={row.href}
+                target={row.href.startsWith('http') ? '_blank' : undefined}
+                rel={row.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                class="group block"
+              >
+                {content}
+              </a>
+            ) : (
+              content
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </GlassCard>
+</Section>

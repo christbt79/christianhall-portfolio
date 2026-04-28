@@ -1,0 +1,12 @@
+---
+import Section from './Section.astro';
+import GlassCard from './GlassCard.astro';
+import { profile } from '~/data/profile';
+import { inlineMd } from '~/lib/inline-md';
+---
+
+<Section id="about" eyebrow="About" title="A quick intro">
+  <GlassCard class="space-y-4 text-lg leading-relaxed text-[color:var(--text)]/90">
+    {profile.about.map((paragraph) => <p set:html={inlineMd(paragraph)} />)}
+  </GlassCard>
+</Section>

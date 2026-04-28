@@ -1,0 +1,32 @@
+---
+import ThemeToggle from './ThemeToggle.tsx';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#clients', label: 'Clients' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/blog', label: 'Writing' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+  <nav class="glass-strong inline-flex items-center gap-2 rounded-full px-2 py-2 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.25)]">
+    <ul class="hidden items-center gap-1 md:flex">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="rounded-full px-3 py-1.5 text-sm text-[color:var(--muted)] transition-colors hover:text-[color:var(--text)]"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/" class="rounded-full px-3 py-1.5 text-sm font-medium md:hidden">Home</a>
+    <ThemeToggle client:load />
+  </nav>
+</header>

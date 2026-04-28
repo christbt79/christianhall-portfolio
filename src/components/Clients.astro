@@ -1,0 +1,46 @@
+---
+import Section from './Section.astro';
+import { clients } from '~/data/clients';
+
+// Duplicate the list once so the marquee loops seamlessly.
+const track = [...clients, ...clients];
+
+// Set to `true` to force every logo to render in white (useful if your
+// logos are dark and don't sit well on the dark theme). Switch to `false`
+// if you've supplied logos already styled for both themes.
+const monochrome = true;
+---
+
+<Section
+  id="clients"
+  eyebrow="Clients"
+  title="Companies I've worked with"
+  description="Just some of the key names I've worked with in the enterprise technology sector who drive the future of the industry forward."
+>
+  <div
+    class="marquee glass relative overflow-hidden rounded-3xl py-14 md:py-16"
+    aria-label="Client logos, scrolling"
+  >
+    <div class="marquee-track flex w-max items-center gap-20 px-10">
+      {track.map((client, i) => (
+        <div
+          class={`flex h-16 w-36 shrink-0 items-center justify-center transition-opacity duration-300 md:h-20 md:w-40 ${
+            monochrome ? 'logo-mono' : ''
+          }`}
+          aria-hidden={i >= clients.length}
+        >
+          <img
+            src={client.logo}
+            alt={client.name}
+            loading="lazy"
+            decoding="async"
+            class="max-h-14 max-w-full object-contain md:max-h-16"
+          />
+        </div>
+      ))}
+    </div>
+    <!-- Edge fade so logos appear to dissolve in/out -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--bg)] to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[var(--bg)] to-transparent"></div>
+  </div>
+</Section>

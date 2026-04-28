@@ -1,0 +1,16 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import BlogList from '~/components/BlogList.astro';
+import { profile } from '~/data/profile';
+---
+
+<BaseLayout title={`Writing — ${profile.name}`} description="Just some of my thoughts from the industry and beyond.">
+  <div class="reveal mb-12">
+    <p class="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-accent">Writing</p>
+    <h1 class="text-4xl font-semibold tracking-tightest md:text-5xl">Blogs & notes</h1>
+    <p class="mt-3 max-w-2xl text-lg text-[color:var(--muted)]">
+      Just some of my thoughts from the industry and beyond.
+    </p>
+  </div>
+  <BlogList heading={false} />
+</BaseLayout>

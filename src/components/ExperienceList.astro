@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import Section from './Section.astro';
+import GlassCard from './GlassCard.astro';
+import { inlineMd } from '~/lib/inline-md';
+
+const entries = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Section
+  id="experience"
+  eyebrow="Experience"
+  title="Where I've worked"
+  description="20+ years experience in the technology sector, from tech journalism to B2B marketing with the world's biggest brands in cloud, on-prem, and AI."
+>
+  <ol class="space-y-5">
+    {entries.map((entry) => (
+      <li class="reveal">
+        <GlassCard as="article">
+          <div class="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+            <div>
+              <h3 class="text-xl font-semibold tracking-tight md:text-2xl">
+                {entry.data.role}
+              </h3>
+              <p class="mt-1 text-base text-[color:var(--muted)]">
+                {entry.data.company}
+                {entry.data.location && (
+                  <>
+                    <span class="mx-2">·</span>
+                    {entry.data.location}
+                  </>
+                )}
+              </p>
+            </div>
+            <p class="text-sm text-[color:var(--muted)] md:text-right">
+              {entry.data.start} — {entry.data.end}
+            </p>
+          </div>
+          <ul class="mt-5 space-y-2.5 text-[color:var(--text)]/90">
+            {entry.data.highlights.map((h) => (
+              <li
+                class="relative pl-5 leading-relaxed before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-accent"
+                set:html={inlineMd(h)}
+              />
+            ))}
+          </ul>
+          {entry.data.tags.length > 0 && (
+            <div class="mt-5 flex flex-wrap gap-2">
+              {entry.data.tags.map((tag) => (
+                <span class="rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-1 text-xs text-[color:var(--muted)] dark:border-white/10 dark:bg-white/5">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </GlassCard>
+      </li>
+    ))}
+  </ol>
+</Section>

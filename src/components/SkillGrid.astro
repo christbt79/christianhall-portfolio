@@ -1,0 +1,29 @@
+---
+import Section from './Section.astro';
+import GlassCard from './GlassCard.astro';
+import { skillGroups } from '~/data/skills';
+---
+
+<Section
+  id="skills"
+  eyebrow="Skills"
+  title="Where I add value"
+  description="A non-exhaustive list of my broad marketing experience and some of the most impactful tools that drive my daily work."
+>
+  <div class="grid gap-4 md:grid-cols-2">
+    {skillGroups.map((group) => (
+      <GlassCard class="reveal">
+        <h3 class="text-sm font-medium uppercase tracking-[0.18em] text-accent">
+          {group.name}
+        </h3>
+        <ul class="mt-4 flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <li class="rounded-full border border-black/10 bg-black/[0.03] px-3 py-1.5 text-sm text-[color:var(--text)]/90 transition-colors hover:border-accent/40 hover:text-accent dark:border-white/10 dark:bg-white/5">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </GlassCard>
+    ))}
+  </div>
+</Section>
