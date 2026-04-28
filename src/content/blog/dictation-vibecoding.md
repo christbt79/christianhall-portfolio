@@ -5,7 +5,7 @@ pubDate: 2026-04-26
 tags: [dictation, vibecoding, llms]
 ---
 
-Despite loads of recommendations, I resisted downloading Wispr Flow for my Mac for ages. "Not another app with features that are already covered off" I thought. And sure, it does the basics of native-app dictation like pretty much everything else can these days, but that cross-app launch functionality — switching to be active for whatever app you're in — works seamlessly. Its speed, accuracy, and 'baked in' feel just makes you want to stop using your fingers entirely. That's something I never really felt in an app with dictation capabilities before.
+Despite loads of recommendations, I resisted downloading [Wispr Flow](https://wisprflow.ai/) for my Mac for ages. "Not another app with features that are already covered off" I thought. And sure, it does the basics of native-app dictation like pretty much everything else can these days, but that cross-app launch functionality — switching to be active for whatever app you're in — works seamlessly. Its speed, accuracy, and 'baked in' feel just makes you want to stop using your fingers entirely. That's something I never really felt in an app with dictation capabilities before.
 
 ## Go with the flow...
 
