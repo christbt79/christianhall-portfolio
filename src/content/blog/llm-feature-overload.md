@@ -7,7 +7,7 @@ tags: [craft, essays, marketing, b2b, llms]
 
 Sure, we all use an LLM every day, but when powerful new features arrive almost weekly, each promising to redefine how we work and think, why is it so hard for users to break a habit? In my experience from a user’s perspective in professional work, much of the progress feels strangely invisible.
 
-The issue isn’t capability; it’s clarity. You kind of need to follow all the announcments closely to understand the advancements, but even then actually changing habits on basic prompting and untidy chat histories is a big issue. While most softwares have a learning curve and only a small percentage of people actually use the more advanced features, LLMs seem to magnifiy this issue.
+The issue isn’t capability; it’s clarity. You kind of need to follow all the announcements closely to understand the advancements, but even then actually changing habits on basic prompting and untidy chat histories is a big issue. While most softwares have a learning curve and only a small percentage of people actually use the more advanced features, LLMs seem to magnify this issue.
 
 Many of the most useful features — memory, custom instructions, tasks, integrations, model selection — are either buried in menus or poorly explained. Users don’t ignore them out of disinterest, but because they don’t know they exist, or don’t understand how they fit into their daily workflows.
 
