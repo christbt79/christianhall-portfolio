@@ -5,7 +5,7 @@ pubDate: 2026-05-07
 tags: [ai, agency, training, tools, governance]
 ---
 
-After running AI training inside a 60-person agency, a few common themes kept arising, which reflects what many teams must be facing in getting the most out of AI tools.
+After running AI training inside a 60-person agency a few common themes kept arising, which reflects what many teams must be facing in getting the most out of AI tools.
 
 AI adoption has accelerated rapidly across marketing agencies but the real challenge now is integration. Many are asking the same questions: Are we using AI as effectively as we can? Can we streamline processes further? Are teams using it consistently? And perhaps most importantly, are we still maintaining strategic thinking and real client understanding alongside automation?
 
