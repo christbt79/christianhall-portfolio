@@ -7,7 +7,7 @@ export const profile = {
     "For the last 9 years I've been a technology marketing specialist mainly leading global partnerships between **AWS + NVIDIA** from an agency side. I've also worked with many other leading on-premises enterprise vendors, data center companies and emerging technology startups focused on building and scaling AI tools.",
     "I have a proven track record in managing complex stakeholder relationships at **WW and EMEA levels**, delivering strategic marketing programs that accelerate AI and emerging technology adoption across enterprise sectors.",
     "I advise enterprise clients on optimal approaches to engage with the emerging technology ecosystem, translating technical innovation into business impact across regulated industries such as **Financial Services, HCLS and Telco**. I help develop account profiles and work with inside sales teams on ABM targets, align sales and marketing lead processes and create joint partnership co-sell materials. I also plan and execute thought leadership programmes to position clients as category leaders in AI infrastructure and cloud.",
-    "Outside of work I blog on agentic AI at my site [The Agentic Times](https://theagentictimes.site/) (developed with Claude Code, just like this site), and vibecode other personal projects. I'm also a Notion template builder, 3D printing hobbyist, and obsessive AI experimenter... when I'm not watching F1.",
+    "Outside of work I blog on agentic AI at my site [The Agentic Times](https://theagentictimes.site/) (developed with Claude Code, just like this site), and vibecode other personal projects. I'm also a Notion template maker, PC builder, 3D printing hobbyist, and obsessive AI experimenter... when I'm not watching F1.",
   ],
 };
 
