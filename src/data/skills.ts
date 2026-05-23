@@ -3,7 +3,7 @@ export type SkillGroup = { name: string; items: string[] };
 export const skillGroups: SkillGroup[] = [
   {
     name: 'Account Strategy',
-    items: ['GTM strategy', 'Messaging', 'Activation', 'Reporting', 'Governance', 'Budgeting'],
+    items: ['GTM strategy', 'Messaging', 'Activation', 'Reporting', 'Governance', 'Stakeholder Management', 'Budgeting'],
   },
   {
     name: 'Marketing',
@@ -15,7 +15,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     name: 'AI Tools & Software',
-    items: ['Claude Code', 'Claude Cowork', 'Lovable', 'Notion', 'GitHub', 'GitHub Actions', 'Pipedream', 'HubSpot'],
+    items: ['Claude Code', 'Claude Cowork', 'Codex', 'Lovable', 'Notion', 'GitHub', 'GitHub Actions', 'Pipedream', 'HubSpot'],
   },
   {
     name: 'Management',
