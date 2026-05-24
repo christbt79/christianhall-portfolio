@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.tsx';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -13,20 +14,84 @@ const links = [
 ---
 
 <header class="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
-  <nav class="glass-strong inline-flex items-center gap-2 rounded-full px-2 py-2 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.25)]">
-    <ul class="hidden items-center gap-1 md:flex">
+  <nav class="glass-strong rounded-3xl shadow-[0_8px_32px_-12px_rgba(0,0,0,0.25)] md:rounded-full">
+    <div class="flex items-center gap-1 px-2 py-2">
+      <!-- Desktop links -->
+      <ul class="hidden items-center gap-1 md:flex">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="rounded-full px-3 py-1.5 text-sm text-[color:var(--muted)] transition-colors hover:text-[color:var(--text)]"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="glass inline-flex h-10 w-10 items-center justify-center rounded-full text-[color:var(--text)] transition-all duration-300 hover:scale-105 active:scale-95 md:hidden"
+      >
+        <Menu id="menu-icon-open" size={18} />
+        <X id="menu-icon-close" size={18} className="hidden" />
+      </button>
+
+      <ThemeToggle client:load />
+    </div>
+
+    <!-- Mobile menu (collapsed by default) -->
+    <ul
+      id="mobile-menu"
+      class="hidden min-w-[220px] flex-col gap-0.5 px-2 pb-3 pt-1 md:hidden"
+    >
       {links.map((link) => (
         <li>
           <a
             href={link.href}
-            class="rounded-full px-3 py-1.5 text-sm text-[color:var(--muted)] transition-colors hover:text-[color:var(--text)]"
+            class="block rounded-2xl px-4 py-2.5 text-base text-[color:var(--text)]/90 transition-colors hover:bg-black/5 dark:hover:bg-white/5"
           >
             {link.label}
           </a>
         </li>
       ))}
     </ul>
-    <a href="/" class="rounded-full px-3 py-1.5 text-sm font-medium md:hidden">Home</a>
-    <ThemeToggle client:load />
   </nav>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function setOpen(open: boolean) {
+    if (!menu || !btn) return;
+    menu.classList.toggle('hidden', !open);
+    menu.classList.toggle('flex', open);
+    btn.setAttribute('aria-expanded', String(open));
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+  }
+
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    setOpen(!open);
+  });
+
+  // Close the menu when a link is tapped (so jump-to-section feels right).
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false)),
+  );
+
+  // Close on Escape, for keyboard users.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+</script>
