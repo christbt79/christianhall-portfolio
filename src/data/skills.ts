@@ -15,7 +15,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     name: 'AI Tools & Software',
-    items: ['Claude Code', 'Claude Cowork', 'Codex', 'Lovable', 'Notion', 'GitHub', 'GitHub Actions', 'Pipedream', 'HubSpot'],
+    items: ['Claude Code', 'Claude Cowork', 'Codex', 'Lovable', 'Notion', 'GitHub', 'GitHub Actions', 'Pipedream', 'Make.com', 'HubSpot'],
   },
   {
     name: 'Management',
