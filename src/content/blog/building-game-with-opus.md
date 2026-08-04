@@ -5,7 +5,7 @@ pubDate: 2026-07-20
 tags: [projects, vibecoding, claude, opus, games, 3D, strategy]
 ---
 
-A week ago, [HexaScaler] (https://hexascaler.netlify.app/) was just an idea, a 3D hex-tile strategy game about building and running your own data centre — power, cooling, GPU capacity, compute economics, the works. Today, it's a genuinely playable 45-minute experience that levelled up my experience of vibecoding. 
+A week ago, [HexaScaler](https://hexascaler.netlify.app/) was just an idea, a 3D hex-tile strategy game about building and running your own data centre — power, cooling, GPU capacity, compute economics, the works. Today, it's a genuinely playable 45-minute experience that levelled up my experience of vibecoding. 
 
 Built with Claude Opus 5 in Claude Code, the process changed how I think about what "collaborating" with an AI model actually means. Opus 5's intelligence and uncanny ability to understand where I was headed with my thinking around a complex task was exciting, if slightly eerie.
 
